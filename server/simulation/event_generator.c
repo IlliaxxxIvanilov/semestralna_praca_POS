@@ -3,8 +3,10 @@
 #include "../parking/parking_lot.h"
 #include "../utils/random_generator.h"
 #include "../utils/logger.h"
+#include "stdlib.h"
 
 void event_generator_generate(parking_state_t *state, statistics_t *stats, const sim_config_t *config) {
+    srand(time(NULL));
     if (rand() % random_generator_int(config->arrival_min, config->arrival_max) == 0) {
         vehicle_t v;
         vehicle_init(&v, config);

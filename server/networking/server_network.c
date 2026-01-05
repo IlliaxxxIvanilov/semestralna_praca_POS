@@ -37,18 +37,18 @@ void *server_network_thread(void *arg) {
         return NULL;
     }
 
-    logger_log("Server počúva na porte %d", DEFAULT_PORT);
+    logger_log("Server pocuva na porte %d", DEFAULT_PORT);
 
     while (ctx->server_running) {
         int client_sock = accept(server_fd, NULL, NULL);
         if (client_sock == -1) continue;
 
-        client_handler_arg_t *arg = malloc(sizeof(client_handler_arg_t));
-        arg->sock = client_sock;
-        arg->ctx = ctx;
+        client_handler_arg_t *argc = malloc(sizeof(client_handler_arg_t));
+        argc->sock = client_sock;
+        argc->ctx = ctx;
 
         pthread_t th;
-        pthread_create(&th, NULL, client_handler_handle, arg);
+        pthread_create(&th, NULL, client_handler_handle, argc);
         pthread_detach(th);
     }
 

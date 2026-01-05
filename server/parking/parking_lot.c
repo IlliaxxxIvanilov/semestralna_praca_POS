@@ -1,7 +1,6 @@
 #include "parking_lot.h"
-#include "vehicle.h"
-#include "../utils/random_generator.h"
 #include <stdlib.h>
+#include <string.h>
 
 void parking_lot_init(parking_state_t *state, int num_spots) {
     state->num_spots = num_spots;
@@ -22,7 +21,10 @@ bool parking_lot_try_park(parking_state_t *state, const vehicle_t *v, statistics
         if (!state->spots[i].occupied) {
             state->spots[i].occupied = true;
             state->spots[i].vehicle = malloc(sizeof(vehicle_t));
-            if (state->spots[i].vehicle) *state->spots[i].vehicle = *v;
+            if (state->spots[i].vehicle) {
+              return false;
+            }
+            *state->spots[i].vehicle = *v;
             state->occupied_count++;
             stats->parked_vehicles++;
             return true;

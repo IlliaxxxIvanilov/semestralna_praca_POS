@@ -1,9 +1,10 @@
 #include "client_handler.h"
 #include <unistd.h>
-#include <string.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <sys/socket.h>
 #include "../../shared/protocol.h"
 #include "../simulation/simulation.h"
-#include "../utils/logger.h"
 
 void *client_handler_handle(void *arg) {
     client_handler_arg_t *handler_arg = arg;

@@ -4,8 +4,9 @@
 #include <pthread.h>
 #include <stdbool.h>
 #include <unistd.h>
-#include "../../shared/constants.h"
-#include "../../shared/dto.h"
+#include "../shared/dto.h"
+#include "../shared/constants.h"
+#include "../shared/protocol.h"
 
 typedef struct ClientConnection {
     int socket;
@@ -29,8 +30,9 @@ typedef struct ServerContext {
     int             shutdown_pipe[2]; 
 } server_context_t;
 
-void server_context_init(server_context_t *ctx);
+
 void server_context_destroy(server_context_t *ctx);
+void server_context_init(server_context_t *ctx);
 
 int  server_context_add_client(server_context_t *ctx, int sock, bool is_creator);
 void server_context_remove_client(server_context_t *ctx, int sock);

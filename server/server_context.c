@@ -1,8 +1,10 @@
 #include "server_context.h"
+#include <pthread.h>
 #include <string.h>
 #include <fcntl.h>
-#include "../../shared/protocol.h"
-#include "../utils/logger.h"
+#include <stdlib.h>
+#include "../shared/protocol.h"
+#include "sys/socket.h"
 
 void server_context_init(server_context_t *ctx) {
     memset(ctx, 0, sizeof(*ctx));
@@ -20,6 +22,13 @@ void server_context_init(server_context_t *ctx) {
 void server_context_destroy(server_context_t *ctx) {
     pthread_mutex_destroy(&ctx->mutex);
     pthread_cond_destroy(&ctx->state_changed_cond);
+    
+    for (int i = 0; i < ctx->parking_state.num_spots; i++) {
+      if (ctx->parking_state.spots[i].occupied && ctx->parking_state.spots[i].vehicle) {
+        free(ctx->parking_state.spots[i].vehicle);
+        ctx->parking_state.spots[i].vehicle = NULL;
+    }
+    }
 
     for (int i = 0; i < ctx->client_count; i++) {
         close(ctx->clients[i].socket);
@@ -52,9 +61,11 @@ void server_context_remove_client(server_context_t *ctx, int sock) {
 
 void server_context_broadcast(server_context_t *ctx, message_type_t type, const void *data) {
     char buffer[MAX_MESSAGE_SIZE];
-    protocol_serialize(type, data, buffer, MAX_MESSAGE_SIZE);
-
+    protocol_serialize_message(type, data, buffer, MAX_MESSAGE_SIZE);
+    
+    pthread_mutex_lock(&ctx->mutex);
     for (int i = 0; i < ctx->client_count; i++) {
         send(ctx->clients[i].socket, buffer, strlen(buffer), 0);
     }
+    pthread_mutex_unlock(&ctx->mutex);
 }

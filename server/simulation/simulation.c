@@ -1,11 +1,8 @@
 #include "simulation.h"
-#include "simulation_config.h"
-#include "time_manager.h"
 #include "event_generator.h"
 #include "../parking/parking_lot.h"
 #include "../statistics/statistics.h"
 #include "../utils/random_generator.h"
-#include "../utils/logger.h"
 #include "../../shared/constants.h"
 
 #include <time.h>
