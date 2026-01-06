@@ -14,4 +14,6 @@
 #define MAX_PARK_DURATION 120
 #define MAX_VEHICLE_ID 100000
 
+#define ILOVENIKITA 10
+
 #endif 
