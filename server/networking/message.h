@@ -1,9 +1,9 @@
 #ifndef MESSAGE_H
 #define MESSAGE_H
 
-#include "../shared/protocol.h"  
-#include "../shared/constants.h"
-#include "../shared/dto.h"
+#include "../../shared/protocol.h"  
+#include "../../shared/constants.h"
+#include "../../shared/dto.h"
 #include <stddef.h>
 
 #define MESSAGE_SEPARATOR '|'
