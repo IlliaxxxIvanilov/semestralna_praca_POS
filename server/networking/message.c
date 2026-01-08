@@ -1,5 +1,5 @@
 #include "message.h"
-#include "../shared/protocol.h"
+#include "../../shared/protocol.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
