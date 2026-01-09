@@ -9,16 +9,17 @@
 #include "../../shared/constants.h"
 #include "../../shared/protocol.h"
 
-/* socket klienta (len v tomto súbore) */
-static int client_socket = -1;
-
-bool client_network_connect(const char *ip, int port) {
+/*
+ * Pripojenie na server
+ */
+int client_network_connect(const char *ip, int port) {
+    int sock;
     struct sockaddr_in server_addr;
 
-    client_socket = socket(AF_INET, SOCK_STREAM, 0);
-    if (client_socket < 0) {
+    sock = socket(AF_INET, SOCK_STREAM, 0);
+    if (sock < 0) {
         perror("socket");
-        return false;
+        return -1;
     }
 
     server_addr.sin_family = AF_INET;
@@ -26,52 +27,43 @@ bool client_network_connect(const char *ip, int port) {
 
     if (inet_pton(AF_INET, ip, &server_addr.sin_addr) <= 0) {
         perror("inet_pton");
-        close(client_socket);
-        client_socket = -1;
-        return false;
+        close(sock);
+        return -1;
     }
 
-    if (connect(client_socket,
-                (struct sockaddr *)&server_addr,
-                sizeof(server_addr)) < 0) {
+    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
         perror("connect");
-        close(client_socket);
-        client_socket = -1;
-        return false;
+        close(sock);
+        return -1;
     }
 
-    return true;
+    printf("Pripojeny na server %s:%d\n", ip, port);
+    return sock;
 }
 
-void client_network_disconnect() {
-    if (client_socket != -1) {
-        close(client_socket);
-        client_socket = -1;
-    }
-}
-
-bool client_network_send(message_type_t type, const void *data) {
+/*
+ * Pošle správu serveru (bez dát)
+ */
+int client_network_send(int sock, message_type_t type) {
     char buffer[MAX_MESSAGE_SIZE];
 
-    protocol_serialize_message(type, data, buffer, sizeof(buffer));
+    protocol_serialize_message(type, NULL, buffer, sizeof(buffer));
 
-    ssize_t sent = send(client_socket, buffer, strlen(buffer), 0);
-    return sent > 0;
-}
-
-bool client_network_receive(message_type_t *type, void *data) {
-    char buffer[MAX_MESSAGE_SIZE];
-
-    ssize_t received = recv(client_socket, buffer, sizeof(buffer) - 1, 0);
-    if (received <= 0) {
-        return false;
+    ssize_t sent = send(sock, buffer, strlen(buffer), 0);
+    if (sent <= 0) {
+        perror("send");
+        return -1;
     }
 
-    buffer[received] = '\0';
+    return 0;
+}
 
-    *type = protocol_deserialize_type(buffer);
-    protocol_deserialize_data(*type, buffer, data);
-
-    return true;
+/*
+ * Zavrie spojenie
+ */
+void client_network_close(int sock) {
+    if (sock >= 0) {
+        close(sock);
+    }
 }
 
