@@ -1,66 +1,71 @@
 #include "client_network.h"
-
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
 #include <arpa/inet.h>
-#include <sys/socket.h>
 
-#include "../../shared/constants.h"
-#include "../../shared/protocol.h"
-
-/*
- * Pripojenie na server
- */
-int client_network_connect(const char *ip, int port) {
-    int sock;
-    struct sockaddr_in server_addr;
-
-    sock = socket(AF_INET, SOCK_STREAM, 0);
+int client_network_connect(const char *host, int port) {
+    int sock = socket(AF_INET, SOCK_STREAM, 0);
     if (sock < 0) {
         perror("socket");
         return -1;
     }
 
-    server_addr.sin_family = AF_INET;
-    server_addr.sin_port = htons(port);
+    struct sockaddr_in addr;
+    memset(&addr, 0, sizeof(addr));
+    addr.sin_family = AF_INET;
+    addr.sin_port = htons(port);
 
-    if (inet_pton(AF_INET, ip, &server_addr.sin_addr) <= 0) {
+    if (inet_pton(AF_INET, host, &addr.sin_addr) <= 0) {
         perror("inet_pton");
         close(sock);
         return -1;
     }
 
-    if (connect(sock, (struct sockaddr *)&server_addr, sizeof(server_addr)) < 0) {
+    if (connect(sock, (struct sockaddr *)&addr, sizeof(addr)) < 0) {
         perror("connect");
         close(sock);
         return -1;
     }
 
-    printf("Pripojeny na server %s:%d\n", ip, port);
     return sock;
 }
 
-/*
- * Pošle správu serveru (bez dát)
- */
+/* jednoduché správy bez payloadu */
 int client_network_send(int sock, message_type_t type) {
-    char buffer[MAX_MESSAGE_SIZE];
+    char buffer[1024];
 
-    protocol_serialize_message(type, NULL, buffer, sizeof(buffer));
+    size_t size = protocol_serialize_message(
+        type,
+        NULL,
+        0,
+        buffer,
+        sizeof(buffer)
+    );
 
-    ssize_t sent = send(sock, buffer, strlen(buffer), 0);
-    if (sent <= 0) {
-        perror("send");
-        return -1;
-    }
-
-    return 0;
+    return send(sock, buffer, size, 0);
 }
 
-/*
- * Zavrie spojenie
- */
+/* správy s dátami (napr. CREATE_SIMULATION) */
+int client_network_send_with_payload(
+    int sock,
+    message_type_t type,
+    const void *payload,
+    size_t payload_size
+) {
+    char buffer[1024];
+
+    size_t size = protocol_serialize_message(
+        type,
+        payload,
+        payload_size,
+        buffer,
+        sizeof(buffer)
+    );
+
+    return send(sock, buffer, size, 0);
+}
+
 void client_network_close(int sock) {
     if (sock >= 0) {
         close(sock);

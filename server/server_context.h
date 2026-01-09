@@ -3,13 +3,12 @@
 
 #include <pthread.h>
 #include <stdbool.h>
-#include <unistd.h>
 #include "../shared/dto.h"
 #include "../shared/constants.h"
 #include "../shared/protocol.h"
 
 typedef struct ClientConnection {
-    int socket;
+    int  socket;
     bool is_creator;
 } client_connection_t;
 
@@ -25,17 +24,26 @@ typedef struct ServerContext {
     sim_config_t    current_config;
 
     client_connection_t clients[MAX_CLIENTS];
-    int             client_count;
+    int client_count;
 
-    int             shutdown_pipe[2]; 
+    int shutdown_pipe[2];
 } server_context_t;
 
-
-void server_context_destroy(server_context_t *ctx);
+/* lifecycle */
 void server_context_init(server_context_t *ctx);
+void server_context_destroy(server_context_t *ctx);
 
+/* clients */
 int  server_context_add_client(server_context_t *ctx, int sock, bool is_creator);
 void server_context_remove_client(server_context_t *ctx, int sock);
-void server_context_broadcast(server_context_t *ctx, message_type_t type, const void *data);
 
-#endif
+/* messaging */
+void server_context_broadcast(
+    server_context_t *ctx,
+    message_type_t type,
+    const void *data,
+    size_t data_size
+);
+
+#endif /* SERVER_CONTEXT_H */
+

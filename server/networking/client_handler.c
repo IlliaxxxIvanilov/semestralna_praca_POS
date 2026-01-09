@@ -1,7 +1,6 @@
 #include "client_handler.h"
 #include <unistd.h>
 #include <stdlib.h>
-#include <unistd.h>
 #include <sys/socket.h>
 #include "../../shared/protocol.h"
 #include "../simulation/simulation.h"
@@ -15,42 +14,49 @@ void *client_handler_handle(void *arg) {
     bool is_creator = false;
 
     pthread_mutex_lock(&ctx->mutex);
-    if (ctx->client_count == 0) is_creator = true;
+    if (ctx->client_count == 0)
+        is_creator = true;
     server_context_add_client(ctx, sock, is_creator);
     pthread_mutex_unlock(&ctx->mutex);
 
     char buffer[MAX_MESSAGE_SIZE];
 
     while (ctx->server_running) {
-        ssize_t n = recv(sock, buffer, sizeof(buffer) - 1, 0);
-        if (n <= 0) break;
-        buffer[n] = '\0';
+        ssize_t n = recv(sock, buffer, sizeof(buffer), 0);
+        if (n <= 0)
+            break;
 
         message_type_t type = protocol_deserialize_type(buffer);
 
         pthread_mutex_lock(&ctx->mutex);
         switch (type) {
-            case MSG_CREATE_SIMULATION:
-                if (is_creator && !ctx->simulation_running) {
-                    sim_config_t cfg;
-                    protocol_deserialize_data(type, buffer, &cfg);
-                    simulation_start(ctx, &cfg);
-                }
-                break;
-            case MSG_END_SIMULATION:
-                if (is_creator) {
-                    simulation_stop(ctx);
-                    ctx->server_running = false;
-                }
-                break;
-            case MSG_GET_STATE:
-                server_context_broadcast(ctx, MSG_STATE_UPDATE, &ctx->parking_state);
-                break;
-            case MSG_GET_STATISTICS:
-                server_context_broadcast(ctx, MSG_STATISTICS_UPDATE, &ctx->statistics);
-                break;
-            default:
-                break;
+
+        case MSG_SIM_CONFIG:
+            if (is_creator && !ctx->simulation_running) {
+                sim_config_t cfg;
+                protocol_deserialize_data(type, buffer, &cfg);
+                simulation_start(ctx, &cfg);
+            }
+            break;
+
+        case MSG_STOP_SIMULATION:
+            if (is_creator) {
+                simulation_stop(ctx);
+                ctx->server_running = false;
+            }
+            break;
+
+        case MSG_GET_STATS:
+            server_context_broadcast(
+                ctx,
+                MSG_STATISTICS_UPDATE,
+                &ctx->statistics,
+                sizeof(statistics_t)
+            );
+            break;
+
+        default:
+            break;
         }
         pthread_mutex_unlock(&ctx->mutex);
     }
@@ -62,3 +68,4 @@ void *client_handler_handle(void *arg) {
     close(sock);
     return NULL;
 }
+
