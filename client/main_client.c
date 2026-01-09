@@ -1,19 +1,23 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <unistd.h>
 
 #include "networking/client_network.h"
+#include "networking/message.h"
 #include "utils/input_parser.h"
-#include "../shared/constants.h"
 
-/*
- * Hlavný klientsky program
- */
+#include "../shared/constants.h"
+#include "../shared/dto.h"
+#include "../shared/protocol.h"
+
 int main(void) {
     int choice;
     int sock = -1;
 
+    char buffer[MAX_MESSAGE_SIZE];
+
     while (1) {
-        printf("\n===== PARKOVISKO – KLIENT =====\n");
+        printf("\n===== PARKOVISKO - KLIENT =====\n");
         printf("1. Nova simulacia\n");
         printf("2. Pripojit sa k simulacii\n");
         printf("3. Zobrazit stav parkoviska\n");
@@ -22,7 +26,11 @@ int main(void) {
         printf("0. Koniec\n");
         printf("Vyber: ");
 
-        scanf("%d", &choice);
+        if (scanf("%d", &choice) != 1) {
+            printf("Neplatny vstup.\n");
+            while (getchar() != '\n');
+            continue;
+        }
 
         if (choice == 0) {
             break;
@@ -44,6 +52,14 @@ int main(void) {
             sim_config_t cfg;
             input_read_simulation_config(&cfg);
 
+            client_message_build_with_payload(
+                MSG_CREATE_SIMULATION,
+                &cfg,
+                sizeof(cfg),
+                buffer,
+                sizeof(buffer)
+            );
+
             client_network_send(sock, MSG_CREATE_SIMULATION);
             printf("Simulacia vytvorena.\n");
         }
@@ -61,7 +77,9 @@ int main(void) {
                 continue;
             }
 
+            client_message_build(MSG_JOIN_SIMULATION, buffer, sizeof(buffer));
             client_network_send(sock, MSG_JOIN_SIMULATION);
+
             printf("Pripojeny k simulacii.\n");
         }
 
@@ -72,6 +90,7 @@ int main(void) {
                 continue;
             }
 
+            client_message_build(MSG_GET_STATE, buffer, sizeof(buffer));
             client_network_send(sock, MSG_GET_STATE);
         }
 
@@ -82,7 +101,8 @@ int main(void) {
                 continue;
             }
 
-            client_network_send(sock, MSG_GET_STATISTICS);
+            client_message_build(MSG_GET_STATS, buffer, sizeof(buffer));
+            client_network_send(sock, MSG_GET_STATS);
         }
 
         /* 5. Ukoncit simulaciu */
@@ -92,11 +112,17 @@ int main(void) {
                 continue;
             }
 
-            client_network_send(sock, MSG_END_SIMULATION);
+            client_message_build(MSG_END_SIM, buffer, sizeof(buffer));
+            client_network_send(sock, MSG_END_SIM);
+
             client_network_close(sock);
             sock = -1;
 
             printf("Simulacia ukoncena.\n");
+        }
+
+        else {
+            printf("Neplatna volba.\n");
         }
     }
 
