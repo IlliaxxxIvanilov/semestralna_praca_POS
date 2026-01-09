@@ -15,6 +15,7 @@ int main(void) {
     int sock = -1;
 
     char buffer[MAX_MESSAGE_SIZE];
+    char recv_buf[MAX_MESSAGE_SIZE];
 
     while (1) {
         printf("\n===== PARKOVISKO - KLIENT =====\n");
@@ -89,9 +90,15 @@ int main(void) {
                 printf("Najprv sa musis pripojit.\n");
                 continue;
             }
+            size_t len = message_build_simple(MSG_GET_STATE, buffer, sizeof(buffer));
+            client_network_send_str(sock, buffer, len);
 
-            client_message_build(MSG_GET_STATE, buffer, sizeof(buffer));
-            client_network_send(sock, MSG_GET_STATE);
+            ssize_t n = client_network_receive(sock, recv_buf, sizeof(recv_buf) - 1);
+
+            if (n > 0) {
+                recv_buf[n] = '\0';
+                printf("Stav parkoviska: \n%s\n", recv_buf);
+      }
         }
 
         /* 4. Statistiky */
@@ -100,10 +107,18 @@ int main(void) {
                 printf("Najprv sa musis pripojit.\n");
                 continue;
             }
+            size_t len = message_build_simple(MSG_GET_STATS, buffer, sizeof(buffer));
+            client_network_send_str(sock, buffer, len);
 
-            client_message_build(MSG_GET_STATS, buffer, sizeof(buffer));
-            client_network_send(sock, MSG_GET_STATS);
-        }
+            ssize_t n = client_network_receive(sock, recv_buf, sizeof(recv_buf) - 1);
+
+            if (n > 0) {
+                recv_buf[n] = '\0';
+                printf("Statistiky: \n%s\n", recv_buf);
+      }
+           
+        
+    }
 
         /* 5. Ukoncit simulaciu */
         else if (choice == 5) {

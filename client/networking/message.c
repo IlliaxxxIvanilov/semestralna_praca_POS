@@ -1,6 +1,18 @@
 #include "message.h"
 #include "../../shared/protocol.h"
 #include <string.h>
+#include <stdio.h>
+
+
+size_t message_build_simple(
+  message_type_t type,
+  char *buffer,
+  size_t buffer_size
+) {
+  int written = snprintf(buffer, buffer_size, "%d\n", type);
+  return (written > 0) ? (size_t)written : 0;
+}
+
 
 /*
  * Klientsky helper na vytvorenie správy bez payloadu
