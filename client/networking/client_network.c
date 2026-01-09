@@ -1,6 +1,7 @@
 #include "client_network.h"
 #include <stdio.h>
 #include <string.h>
+#include <sys/socket.h>
 #include <unistd.h>
 #include <arpa/inet.h>
 
@@ -29,6 +30,11 @@ int client_network_connect(const char *host, int port) {
     }
 
     return sock;
+}
+
+int client_network_send_str(int sock, const char *buffer, size_t length) {
+  if (!buffer || length == 0) return -1;
+  return send(sock, buffer, length, 0) == (ssize_t)length ? 0 : -1;
 }
 
 /* jednoduché správy bez payloadu */
@@ -72,3 +78,11 @@ void client_network_close(int sock) {
     }
 }
 
+int client_network_receive(int sock, char *buffer, size_t buffer_size) {
+  if (!buffer || buffer_size == 0) return  -1;
+  ssize_t n = recv(sock, buffer, buffer_size, 0);
+  if (n <= 0) return -1;
+
+  buffer[n] = '\0';
+  return (int)n;
+}
