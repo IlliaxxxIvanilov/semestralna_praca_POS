@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra -pthread CMakeFiles/client.dir/client/main.c.o CMakeFiles/client.dir/client/client.c.o CMakeFiles/client.dir/client/network.c.o CMakeFiles/client.dir/client/menu.c.o CMakeFiles/client.dir/client/display.c.o -o parking_client  libcommon.a 

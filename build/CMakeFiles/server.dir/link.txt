@@ -1,0 +1,1 @@
+/usr/bin/cc  -Wall -Wextra -pthread CMakeFiles/server.dir/server/main.c.o CMakeFiles/server.dir/server/server.c.o CMakeFiles/server.dir/server/simulation.c.o CMakeFiles/server.dir/server/parking.c.o CMakeFiles/server.dir/server/vehicle.c.o CMakeFiles/server.dir/server/statistics.c.o CMakeFiles/server.dir/server/client_handler.c.o -o parking_server  libcommon.a 
