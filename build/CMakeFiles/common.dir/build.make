@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivanilov/projekt/semestralna_praca_POS
+CMAKE_SOURCE_DIR = /home/timoshevskyi/semestralna_praca_POS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivanilov/projekt/semestralna_praca_POS/build
+CMAKE_BINARY_DIR = /home/timoshevskyi/semestralna_praca_POS/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/common.dir/depend.make
@@ -70,32 +70,32 @@ include CMakeFiles/common.dir/progress.make
 include CMakeFiles/common.dir/flags.make
 
 CMakeFiles/common.dir/common/protocol.c.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/common/protocol.c.o: /home/ivanilov/projekt/semestralna_praca_POS/common/protocol.c
+CMakeFiles/common.dir/common/protocol.c.o: /home/timoshevskyi/semestralna_praca_POS/common/protocol.c
 CMakeFiles/common.dir/common/protocol.c.o: CMakeFiles/common.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/common.dir/common/protocol.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common.dir/common/protocol.c.o -MF CMakeFiles/common.dir/common/protocol.c.o.d -o CMakeFiles/common.dir/common/protocol.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/common/protocol.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/common.dir/common/protocol.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common.dir/common/protocol.c.o -MF CMakeFiles/common.dir/common/protocol.c.o.d -o CMakeFiles/common.dir/common/protocol.c.o -c /home/timoshevskyi/semestralna_praca_POS/common/protocol.c
 
 CMakeFiles/common.dir/common/protocol.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/common.dir/common/protocol.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/common/protocol.c > CMakeFiles/common.dir/common/protocol.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/common/protocol.c > CMakeFiles/common.dir/common/protocol.c.i
 
 CMakeFiles/common.dir/common/protocol.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/common.dir/common/protocol.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/common/protocol.c -o CMakeFiles/common.dir/common/protocol.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/common/protocol.c -o CMakeFiles/common.dir/common/protocol.c.s
 
 CMakeFiles/common.dir/common/utils.c.o: CMakeFiles/common.dir/flags.make
-CMakeFiles/common.dir/common/utils.c.o: /home/ivanilov/projekt/semestralna_praca_POS/common/utils.c
+CMakeFiles/common.dir/common/utils.c.o: /home/timoshevskyi/semestralna_praca_POS/common/utils.c
 CMakeFiles/common.dir/common/utils.c.o: CMakeFiles/common.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/common.dir/common/utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common.dir/common/utils.c.o -MF CMakeFiles/common.dir/common/utils.c.o.d -o CMakeFiles/common.dir/common/utils.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/common/utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/common.dir/common/utils.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/common.dir/common/utils.c.o -MF CMakeFiles/common.dir/common/utils.c.o.d -o CMakeFiles/common.dir/common/utils.c.o -c /home/timoshevskyi/semestralna_praca_POS/common/utils.c
 
 CMakeFiles/common.dir/common/utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/common.dir/common/utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/common/utils.c > CMakeFiles/common.dir/common/utils.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/common/utils.c > CMakeFiles/common.dir/common/utils.c.i
 
 CMakeFiles/common.dir/common/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/common.dir/common/utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/common/utils.c -o CMakeFiles/common.dir/common/utils.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/common/utils.c -o CMakeFiles/common.dir/common/utils.c.s
 
 # Object files for target common
 common_OBJECTS = \
@@ -109,7 +109,7 @@ libcommon.a: CMakeFiles/common.dir/common/protocol.c.o
 libcommon.a: CMakeFiles/common.dir/common/utils.c.o
 libcommon.a: CMakeFiles/common.dir/build.make
 libcommon.a: CMakeFiles/common.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcommon.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcommon.a"
 	$(CMAKE_COMMAND) -P CMakeFiles/common.dir/cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/common.dir/link.txt --verbose=$(VERBOSE)
 
@@ -122,6 +122,6 @@ CMakeFiles/common.dir/clean:
 .PHONY : CMakeFiles/common.dir/clean
 
 CMakeFiles/common.dir/depend:
-	cd /home/ivanilov/projekt/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/timoshevskyi/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles/common.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/common.dir/depend
 

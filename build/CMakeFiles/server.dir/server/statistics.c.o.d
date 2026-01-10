@@ -1,8 +1,8 @@
 CMakeFiles/server.dir/server/statistics.c.o: \
- /home/ivanilov/projekt/semestralna_praca_POS/server/statistics.c \
+ /home/timoshevskyi/semestralna_praca_POS/server/statistics.c \
  /usr/include/stdc-predef.h \
- /home/ivanilov/projekt/semestralna_praca_POS/server/statistics.h \
- /home/ivanilov/projekt/semestralna_praca_POS/server/../common/protocol.h \
+ /home/timoshevskyi/semestralna_praca_POS/server/statistics.h \
+ /home/timoshevskyi/semestralna_praca_POS/server/../common/protocol.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -18,7 +18,7 @@ CMakeFiles/server.dir/server/statistics.c.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/ivanilov/projekt/semestralna_praca_POS/server/../common/config.h \
+ /home/timoshevskyi/semestralna_praca_POS/server/../common/config.h \
  /usr/include/pthread.h /usr/include/sched.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
  /usr/include/x86_64-linux-gnu/bits/types/time_t.h \

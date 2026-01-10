@@ -1,8 +1,8 @@
 CMakeFiles/client.dir/client/main.c.o: \
- /home/ivanilov/projekt/semestralna_praca_POS/client/main.c \
+ /home/timoshevskyi/semestralna_praca_POS/client/main.c \
  /usr/include/stdc-predef.h \
- /home/ivanilov/projekt/semestralna_praca_POS/client/client.h \
- /home/ivanilov/projekt/semestralna_praca_POS/client/../common/utils.h \
+ /home/timoshevskyi/semestralna_praca_POS/client/client.h \
+ /home/timoshevskyi/semestralna_praca_POS/client/../common/utils.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -58,4 +58,4 @@ CMakeFiles/client.dir/client/main.c.o: \
  /usr/include/x86_64-linux-gnu/bits/struct_mutex.h \
  /usr/include/x86_64-linux-gnu/bits/struct_rwlock.h /usr/include/alloca.h \
  /usr/include/x86_64-linux-gnu/bits/stdlib-float.h \
- /home/ivanilov/projekt/semestralna_praca_POS/client/../common/config.h
+ /home/timoshevskyi/semestralna_praca_POS/client/../common/config.h

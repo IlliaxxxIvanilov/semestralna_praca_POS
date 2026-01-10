@@ -1,7 +1,7 @@
 CMakeFiles/common.dir/common/utils.c.o: \
- /home/ivanilov/projekt/semestralna_praca_POS/common/utils.c \
+ /home/timoshevskyi/semestralna_praca_POS/common/utils.c \
  /usr/include/stdc-predef.h \
- /home/ivanilov/projekt/semestralna_praca_POS/common/utils.h \
+ /home/timoshevskyi/semestralna_praca_POS/common/utils.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -30,8 +30,8 @@ CMakeFiles/common.dir/common/utils.c.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_itimerspec.h \
  /usr/include/x86_64-linux-gnu/bits/types/locale_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__locale_t.h \
- /home/ivanilov/projekt/semestralna_praca_POS/common/config.h \
- /home/ivanilov/projekt/semestralna_praca_POS/common/protocol.h \
+ /home/timoshevskyi/semestralna_praca_POS/common/config.h \
+ /home/timoshevskyi/semestralna_praca_POS/common/protocol.h \
  /usr/include/stdio.h /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/__mbstate_t.h \

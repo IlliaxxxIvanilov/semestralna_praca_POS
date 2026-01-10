@@ -4,7 +4,7 @@
 # compile C with /usr/bin/cc
 C_DEFINES = 
 
-C_INCLUDES = -I/home/ivanilov/projekt/semestralna_praca_POS
+C_INCLUDES = -I/home/timoshevskyi/semestralna_praca_POS
 
 C_FLAGS =  -Wall -Wextra -pthread -std=gnu11
 

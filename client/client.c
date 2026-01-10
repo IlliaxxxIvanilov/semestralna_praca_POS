@@ -51,7 +51,13 @@ int client_connect(Client *client, const char *host, int port) {
     }
     
     client->connected = 1;
-    strncpy(client->server_host, host, sizeof(client->server_host) - 1);
+    
+    /* Bezpečné kopírovanie - kontrola či nie je rovnaká adresa */
+    if (host != client->server_host) {
+        strncpy(client->server_host, host, sizeof(client->server_host) - 1);
+        client->server_host[sizeof(client->server_host) - 1] = '\0';
+    }
+    
     client->server_port = port;
     
     return 0;
