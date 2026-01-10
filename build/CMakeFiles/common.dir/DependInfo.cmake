@@ -8,8 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/ivanilov/projekt/semestralna_praca_POS/common/protocol.c" "CMakeFiles/common.dir/common/protocol.c.o" "gcc" "CMakeFiles/common.dir/common/protocol.c.o.d"
-  "/home/ivanilov/projekt/semestralna_praca_POS/common/utils.c" "CMakeFiles/common.dir/common/utils.c.o" "gcc" "CMakeFiles/common.dir/common/utils.c.o.d"
+  "/home/timoshevskyi/semestralna_praca_POS/common/protocol.c" "CMakeFiles/common.dir/common/protocol.c.o" "gcc" "CMakeFiles/common.dir/common/protocol.c.o.d"
+  "/home/timoshevskyi/semestralna_praca_POS/common/utils.c" "CMakeFiles/common.dir/common/utils.c.o" "gcc" "CMakeFiles/common.dir/common/utils.c.o.d"
   )
 
 # Targets to which this target links.

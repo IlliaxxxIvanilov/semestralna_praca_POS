@@ -66,6 +66,7 @@ Simulation* simulation_create(const SimulationConfig *config) {
     sim->next_arrival_time = random_range(config->min_arrival_interval, 
                                           config->max_arrival_interval);
     sim->running = 0;
+    sim->thread_created = 0;
     
     return sim;
 }
@@ -160,8 +161,8 @@ static void* simulation_thread_func(void *arg) {
             Vehicle *vehicle = sim->vehicles[i];
             if (vehicle && vehicle_should_depart(vehicle, sim->elapsed_time)) {
                 //uint32_t parking_time = sim->elapsed_time - 
-                   // (vehicle->arrival_time + 
-                  //   (vehicle->departure_time - vehicle->arrival_time - vehicle->parking_duration));
+                  //  (vehicle->arrival_time + 
+                 //    (vehicle->departure_time - vehicle->arrival_time - vehicle->parking_duration));
                 
                 parking_depart(sim->parking, vehicle);
                 statistics_add_departure(&sim->stats, vehicle->parking_duration);
@@ -221,6 +222,7 @@ int simulation_start(Simulation *sim) {
         return -1;
     }
     
+    sim->thread_created = 1;
     pthread_mutex_unlock(sim->mutex);
     return 0;
 }
@@ -230,18 +232,25 @@ void simulation_stop(Simulation *sim) {
         return;
     }
     
+    int was_running = 0;
+    int thread_was_created = 0;
+    
     pthread_mutex_lock(sim->mutex);
-    
-    if (!sim->running) {
-        pthread_mutex_unlock(sim->mutex);
-        return;
+    if (sim->running) {
+        sim->running = 0;
+        was_running = 1;
     }
-    
-    sim->running = 0;
+    thread_was_created = sim->thread_created;
     pthread_mutex_unlock(sim->mutex);
     
-    /* Čakanie na ukončenie vlákna */
-    pthread_join(sim->thread, NULL);
+    /* Čakanie na ukončenie vlákna (len ak bolo vytvorené a bežalo) */
+    if (was_running && thread_was_created) {
+        pthread_join(sim->thread, NULL);
+        
+        pthread_mutex_lock(sim->mutex);
+        sim->thread_created = 0;
+        pthread_mutex_unlock(sim->mutex);
+    }
 }
 
 int simulation_get_state(Simulation *sim, ParkingState *state) {

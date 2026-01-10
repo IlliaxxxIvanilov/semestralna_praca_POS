@@ -9,7 +9,7 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <pthread.h>
-#include <signal.h>
+//#include <signal.h>
 
 Server* server_create(int port) {
     Server *server = (Server*)malloc(sizeof(Server));
@@ -21,6 +21,19 @@ Server* server_create(int port) {
     server->running = 0;
     server->simulation = NULL;
     server->port = port;
+    server->threads = NULL;
+    
+    server->threads_mutex = (pthread_mutex_t*)malloc(sizeof(pthread_mutex_t));
+    if (!server->threads_mutex) {
+        free(server);
+        return NULL;
+    }
+    
+    if (pthread_mutex_init(server->threads_mutex, NULL) != 0) {
+        free(server->threads_mutex);
+        free(server);
+        return NULL;
+    }
     
     return server;
 }
@@ -28,6 +41,22 @@ Server* server_create(int port) {
 void server_destroy(Server *server) {
     if (!server) {
         return;
+    }
+    
+    /* Čakanie na ukončenie všetkých vlákien */
+    if (server->threads_mutex) {
+        pthread_mutex_lock(server->threads_mutex);
+        ThreadNode *current = server->threads;
+        while (current) {
+            pthread_join(current->thread, NULL);
+            ThreadNode *next = current->next;
+            free(current);
+            current = next;
+        }
+        pthread_mutex_unlock(server->threads_mutex);
+        
+        pthread_mutex_destroy(server->threads_mutex);
+        free(server->threads_mutex);
     }
     
     if (server->simulation) {
@@ -227,7 +256,14 @@ void server_run(Server *server) {
             continue;
         }
         
-        /* Detach vlákna - nemusíme čakať na jeho ukončenie */
-        pthread_detach(thread);
+        /* Pridanie vlákna do zoznamu */
+        pthread_mutex_lock(server->threads_mutex);
+        ThreadNode *node = (ThreadNode*)malloc(sizeof(ThreadNode));
+        if (node) {
+            node->thread = thread;
+            node->next = server->threads;
+            server->threads = node;
+        }
+        pthread_mutex_unlock(server->threads_mutex);
     }
 }

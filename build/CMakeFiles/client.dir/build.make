@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivanilov/projekt/semestralna_praca_POS
+CMAKE_SOURCE_DIR = /home/timoshevskyi/semestralna_praca_POS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivanilov/projekt/semestralna_praca_POS/build
+CMAKE_BINARY_DIR = /home/timoshevskyi/semestralna_praca_POS/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/client.dir/depend.make
@@ -70,74 +70,74 @@ include CMakeFiles/client.dir/progress.make
 include CMakeFiles/client.dir/flags.make
 
 CMakeFiles/client.dir/client/main.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/client/main.c.o: /home/ivanilov/projekt/semestralna_praca_POS/client/main.c
+CMakeFiles/client.dir/client/main.c.o: /home/timoshevskyi/semestralna_praca_POS/client/main.c
 CMakeFiles/client.dir/client/main.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/client/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/main.c.o -MF CMakeFiles/client.dir/client/main.c.o.d -o CMakeFiles/client.dir/client/main.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/client/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/client.dir/client/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/main.c.o -MF CMakeFiles/client.dir/client/main.c.o.d -o CMakeFiles/client.dir/client/main.c.o -c /home/timoshevskyi/semestralna_praca_POS/client/main.c
 
 CMakeFiles/client.dir/client/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/client/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/client/main.c > CMakeFiles/client.dir/client/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/client/main.c > CMakeFiles/client.dir/client/main.c.i
 
 CMakeFiles/client.dir/client/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/client/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/client/main.c -o CMakeFiles/client.dir/client/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/client/main.c -o CMakeFiles/client.dir/client/main.c.s
 
 CMakeFiles/client.dir/client/client.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/client/client.c.o: /home/ivanilov/projekt/semestralna_praca_POS/client/client.c
+CMakeFiles/client.dir/client/client.c.o: /home/timoshevskyi/semestralna_praca_POS/client/client.c
 CMakeFiles/client.dir/client/client.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/client/client.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/client.c.o -MF CMakeFiles/client.dir/client/client.c.o.d -o CMakeFiles/client.dir/client/client.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/client/client.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/client.dir/client/client.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/client.c.o -MF CMakeFiles/client.dir/client/client.c.o.d -o CMakeFiles/client.dir/client/client.c.o -c /home/timoshevskyi/semestralna_praca_POS/client/client.c
 
 CMakeFiles/client.dir/client/client.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/client/client.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/client/client.c > CMakeFiles/client.dir/client/client.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/client/client.c > CMakeFiles/client.dir/client/client.c.i
 
 CMakeFiles/client.dir/client/client.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/client/client.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/client/client.c -o CMakeFiles/client.dir/client/client.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/client/client.c -o CMakeFiles/client.dir/client/client.c.s
 
 CMakeFiles/client.dir/client/network.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/client/network.c.o: /home/ivanilov/projekt/semestralna_praca_POS/client/network.c
+CMakeFiles/client.dir/client/network.c.o: /home/timoshevskyi/semestralna_praca_POS/client/network.c
 CMakeFiles/client.dir/client/network.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/client.dir/client/network.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/network.c.o -MF CMakeFiles/client.dir/client/network.c.o.d -o CMakeFiles/client.dir/client/network.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/client/network.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/client.dir/client/network.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/network.c.o -MF CMakeFiles/client.dir/client/network.c.o.d -o CMakeFiles/client.dir/client/network.c.o -c /home/timoshevskyi/semestralna_praca_POS/client/network.c
 
 CMakeFiles/client.dir/client/network.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/client/network.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/client/network.c > CMakeFiles/client.dir/client/network.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/client/network.c > CMakeFiles/client.dir/client/network.c.i
 
 CMakeFiles/client.dir/client/network.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/client/network.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/client/network.c -o CMakeFiles/client.dir/client/network.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/client/network.c -o CMakeFiles/client.dir/client/network.c.s
 
 CMakeFiles/client.dir/client/menu.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/client/menu.c.o: /home/ivanilov/projekt/semestralna_praca_POS/client/menu.c
+CMakeFiles/client.dir/client/menu.c.o: /home/timoshevskyi/semestralna_praca_POS/client/menu.c
 CMakeFiles/client.dir/client/menu.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/client.dir/client/menu.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/menu.c.o -MF CMakeFiles/client.dir/client/menu.c.o.d -o CMakeFiles/client.dir/client/menu.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/client/menu.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/client.dir/client/menu.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/menu.c.o -MF CMakeFiles/client.dir/client/menu.c.o.d -o CMakeFiles/client.dir/client/menu.c.o -c /home/timoshevskyi/semestralna_praca_POS/client/menu.c
 
 CMakeFiles/client.dir/client/menu.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/client/menu.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/client/menu.c > CMakeFiles/client.dir/client/menu.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/client/menu.c > CMakeFiles/client.dir/client/menu.c.i
 
 CMakeFiles/client.dir/client/menu.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/client/menu.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/client/menu.c -o CMakeFiles/client.dir/client/menu.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/client/menu.c -o CMakeFiles/client.dir/client/menu.c.s
 
 CMakeFiles/client.dir/client/display.c.o: CMakeFiles/client.dir/flags.make
-CMakeFiles/client.dir/client/display.c.o: /home/ivanilov/projekt/semestralna_praca_POS/client/display.c
+CMakeFiles/client.dir/client/display.c.o: /home/timoshevskyi/semestralna_praca_POS/client/display.c
 CMakeFiles/client.dir/client/display.c.o: CMakeFiles/client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/client.dir/client/display.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/display.c.o -MF CMakeFiles/client.dir/client/display.c.o.d -o CMakeFiles/client.dir/client/display.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/client/display.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/client.dir/client/display.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/client.dir/client/display.c.o -MF CMakeFiles/client.dir/client/display.c.o.d -o CMakeFiles/client.dir/client/display.c.o -c /home/timoshevskyi/semestralna_praca_POS/client/display.c
 
 CMakeFiles/client.dir/client/display.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/client.dir/client/display.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/client/display.c > CMakeFiles/client.dir/client/display.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/client/display.c > CMakeFiles/client.dir/client/display.c.i
 
 CMakeFiles/client.dir/client/display.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/client.dir/client/display.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/client/display.c -o CMakeFiles/client.dir/client/display.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/client/display.c -o CMakeFiles/client.dir/client/display.c.s
 
 # Object files for target client
 client_OBJECTS = \
@@ -158,7 +158,7 @@ parking_client: CMakeFiles/client.dir/client/display.c.o
 parking_client: CMakeFiles/client.dir/build.make
 parking_client: libcommon.a
 parking_client: CMakeFiles/client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable parking_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable parking_client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -170,6 +170,6 @@ CMakeFiles/client.dir/clean:
 .PHONY : CMakeFiles/client.dir/clean
 
 CMakeFiles/client.dir/depend:
-	cd /home/ivanilov/projekt/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/timoshevskyi/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles/client.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/client.dir/depend
 

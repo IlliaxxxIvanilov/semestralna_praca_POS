@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivanilov/projekt/semestralna_praca_POS
+CMAKE_SOURCE_DIR = /home/timoshevskyi/semestralna_praca_POS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivanilov/projekt/semestralna_praca_POS/build
+CMAKE_BINARY_DIR = /home/timoshevskyi/semestralna_praca_POS/build
 
 # Utility rule file for all_build.
 
@@ -68,7 +68,7 @@ include CMakeFiles/all_build.dir/progress.make
 
 CMakeFiles/all_build: parking_server
 CMakeFiles/all_build: parking_client
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Zostavujem server aj klient..."
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Zostavujem server aj klient..."
 
 all_build: CMakeFiles/all_build
 all_build: CMakeFiles/all_build.dir/build.make
@@ -83,6 +83,6 @@ CMakeFiles/all_build.dir/clean:
 .PHONY : CMakeFiles/all_build.dir/clean
 
 CMakeFiles/all_build.dir/depend:
-	cd /home/ivanilov/projekt/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles/all_build.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/timoshevskyi/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles/all_build.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/all_build.dir/depend
 

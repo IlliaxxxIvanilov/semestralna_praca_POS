@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ivanilov/projekt/semestralna_praca_POS
+CMAKE_SOURCE_DIR = /home/timoshevskyi/semestralna_praca_POS
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ivanilov/projekt/semestralna_praca_POS/build
+CMAKE_BINARY_DIR = /home/timoshevskyi/semestralna_praca_POS/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/server.dir/depend.make
@@ -70,102 +70,102 @@ include CMakeFiles/server.dir/progress.make
 include CMakeFiles/server.dir/flags.make
 
 CMakeFiles/server.dir/server/main.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/main.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/main.c
+CMakeFiles/server.dir/server/main.c.o: /home/timoshevskyi/semestralna_praca_POS/server/main.c
 CMakeFiles/server.dir/server/main.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/server.dir/server/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/main.c.o -MF CMakeFiles/server.dir/server/main.c.o.d -o CMakeFiles/server.dir/server/main.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/server.dir/server/main.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/main.c.o -MF CMakeFiles/server.dir/server/main.c.o.d -o CMakeFiles/server.dir/server/main.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/main.c
 
 CMakeFiles/server.dir/server/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/main.c > CMakeFiles/server.dir/server/main.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/main.c > CMakeFiles/server.dir/server/main.c.i
 
 CMakeFiles/server.dir/server/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/main.c -o CMakeFiles/server.dir/server/main.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/main.c -o CMakeFiles/server.dir/server/main.c.s
 
 CMakeFiles/server.dir/server/server.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/server.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/server.c
+CMakeFiles/server.dir/server/server.c.o: /home/timoshevskyi/semestralna_praca_POS/server/server.c
 CMakeFiles/server.dir/server/server.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/server.dir/server/server.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/server.c.o -MF CMakeFiles/server.dir/server/server.c.o.d -o CMakeFiles/server.dir/server/server.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/server.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/server.dir/server/server.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/server.c.o -MF CMakeFiles/server.dir/server/server.c.o.d -o CMakeFiles/server.dir/server/server.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/server.c
 
 CMakeFiles/server.dir/server/server.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/server.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/server.c > CMakeFiles/server.dir/server/server.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/server.c > CMakeFiles/server.dir/server/server.c.i
 
 CMakeFiles/server.dir/server/server.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/server.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/server.c -o CMakeFiles/server.dir/server/server.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/server.c -o CMakeFiles/server.dir/server/server.c.s
 
 CMakeFiles/server.dir/server/simulation.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/simulation.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/simulation.c
+CMakeFiles/server.dir/server/simulation.c.o: /home/timoshevskyi/semestralna_praca_POS/server/simulation.c
 CMakeFiles/server.dir/server/simulation.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/server.dir/server/simulation.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/simulation.c.o -MF CMakeFiles/server.dir/server/simulation.c.o.d -o CMakeFiles/server.dir/server/simulation.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/simulation.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/server.dir/server/simulation.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/simulation.c.o -MF CMakeFiles/server.dir/server/simulation.c.o.d -o CMakeFiles/server.dir/server/simulation.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/simulation.c
 
 CMakeFiles/server.dir/server/simulation.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/simulation.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/simulation.c > CMakeFiles/server.dir/server/simulation.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/simulation.c > CMakeFiles/server.dir/server/simulation.c.i
 
 CMakeFiles/server.dir/server/simulation.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/simulation.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/simulation.c -o CMakeFiles/server.dir/server/simulation.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/simulation.c -o CMakeFiles/server.dir/server/simulation.c.s
 
 CMakeFiles/server.dir/server/parking.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/parking.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/parking.c
+CMakeFiles/server.dir/server/parking.c.o: /home/timoshevskyi/semestralna_praca_POS/server/parking.c
 CMakeFiles/server.dir/server/parking.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/server.dir/server/parking.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/parking.c.o -MF CMakeFiles/server.dir/server/parking.c.o.d -o CMakeFiles/server.dir/server/parking.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/parking.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/server.dir/server/parking.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/parking.c.o -MF CMakeFiles/server.dir/server/parking.c.o.d -o CMakeFiles/server.dir/server/parking.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/parking.c
 
 CMakeFiles/server.dir/server/parking.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/parking.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/parking.c > CMakeFiles/server.dir/server/parking.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/parking.c > CMakeFiles/server.dir/server/parking.c.i
 
 CMakeFiles/server.dir/server/parking.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/parking.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/parking.c -o CMakeFiles/server.dir/server/parking.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/parking.c -o CMakeFiles/server.dir/server/parking.c.s
 
 CMakeFiles/server.dir/server/vehicle.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/vehicle.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/vehicle.c
+CMakeFiles/server.dir/server/vehicle.c.o: /home/timoshevskyi/semestralna_praca_POS/server/vehicle.c
 CMakeFiles/server.dir/server/vehicle.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/server.dir/server/vehicle.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/vehicle.c.o -MF CMakeFiles/server.dir/server/vehicle.c.o.d -o CMakeFiles/server.dir/server/vehicle.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/vehicle.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/server.dir/server/vehicle.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/vehicle.c.o -MF CMakeFiles/server.dir/server/vehicle.c.o.d -o CMakeFiles/server.dir/server/vehicle.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/vehicle.c
 
 CMakeFiles/server.dir/server/vehicle.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/vehicle.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/vehicle.c > CMakeFiles/server.dir/server/vehicle.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/vehicle.c > CMakeFiles/server.dir/server/vehicle.c.i
 
 CMakeFiles/server.dir/server/vehicle.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/vehicle.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/vehicle.c -o CMakeFiles/server.dir/server/vehicle.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/vehicle.c -o CMakeFiles/server.dir/server/vehicle.c.s
 
 CMakeFiles/server.dir/server/statistics.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/statistics.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/statistics.c
+CMakeFiles/server.dir/server/statistics.c.o: /home/timoshevskyi/semestralna_praca_POS/server/statistics.c
 CMakeFiles/server.dir/server/statistics.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/server.dir/server/statistics.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/statistics.c.o -MF CMakeFiles/server.dir/server/statistics.c.o.d -o CMakeFiles/server.dir/server/statistics.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/statistics.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/server.dir/server/statistics.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/statistics.c.o -MF CMakeFiles/server.dir/server/statistics.c.o.d -o CMakeFiles/server.dir/server/statistics.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/statistics.c
 
 CMakeFiles/server.dir/server/statistics.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/statistics.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/statistics.c > CMakeFiles/server.dir/server/statistics.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/statistics.c > CMakeFiles/server.dir/server/statistics.c.i
 
 CMakeFiles/server.dir/server/statistics.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/statistics.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/statistics.c -o CMakeFiles/server.dir/server/statistics.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/statistics.c -o CMakeFiles/server.dir/server/statistics.c.s
 
 CMakeFiles/server.dir/server/client_handler.c.o: CMakeFiles/server.dir/flags.make
-CMakeFiles/server.dir/server/client_handler.c.o: /home/ivanilov/projekt/semestralna_praca_POS/server/client_handler.c
+CMakeFiles/server.dir/server/client_handler.c.o: /home/timoshevskyi/semestralna_praca_POS/server/client_handler.c
 CMakeFiles/server.dir/server/client_handler.c.o: CMakeFiles/server.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/server.dir/server/client_handler.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/client_handler.c.o -MF CMakeFiles/server.dir/server/client_handler.c.o.d -o CMakeFiles/server.dir/server/client_handler.c.o -c /home/ivanilov/projekt/semestralna_praca_POS/server/client_handler.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/server.dir/server/client_handler.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/server.dir/server/client_handler.c.o -MF CMakeFiles/server.dir/server/client_handler.c.o.d -o CMakeFiles/server.dir/server/client_handler.c.o -c /home/timoshevskyi/semestralna_praca_POS/server/client_handler.c
 
 CMakeFiles/server.dir/server/client_handler.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/server.dir/server/client_handler.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/ivanilov/projekt/semestralna_praca_POS/server/client_handler.c > CMakeFiles/server.dir/server/client_handler.c.i
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/timoshevskyi/semestralna_praca_POS/server/client_handler.c > CMakeFiles/server.dir/server/client_handler.c.i
 
 CMakeFiles/server.dir/server/client_handler.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/server.dir/server/client_handler.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/ivanilov/projekt/semestralna_praca_POS/server/client_handler.c -o CMakeFiles/server.dir/server/client_handler.c.s
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/timoshevskyi/semestralna_praca_POS/server/client_handler.c -o CMakeFiles/server.dir/server/client_handler.c.s
 
 # Object files for target server
 server_OBJECTS = \
@@ -190,7 +190,7 @@ parking_server: CMakeFiles/server.dir/server/client_handler.c.o
 parking_server: CMakeFiles/server.dir/build.make
 parking_server: libcommon.a
 parking_server: CMakeFiles/server.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable parking_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking C executable parking_server"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/server.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -202,6 +202,6 @@ CMakeFiles/server.dir/clean:
 .PHONY : CMakeFiles/server.dir/clean
 
 CMakeFiles/server.dir/depend:
-	cd /home/ivanilov/projekt/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build /home/ivanilov/projekt/semestralna_praca_POS/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/timoshevskyi/semestralna_praca_POS/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build /home/timoshevskyi/semestralna_praca_POS/build/CMakeFiles/server.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/server.dir/depend
 

@@ -1,8 +1,8 @@
 CMakeFiles/client.dir/client/display.c.o: \
- /home/ivanilov/projekt/semestralna_praca_POS/client/display.c \
+ /home/timoshevskyi/semestralna_praca_POS/client/display.c \
  /usr/include/stdc-predef.h \
- /home/ivanilov/projekt/semestralna_praca_POS/client/display.h \
- /home/ivanilov/projekt/semestralna_praca_POS/client/../common/protocol.h \
+ /home/timoshevskyi/semestralna_praca_POS/client/display.h \
+ /home/timoshevskyi/semestralna_praca_POS/client/../common/protocol.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdint.h /usr/include/stdint.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -18,7 +18,7 @@ CMakeFiles/client.dir/client/display.c.o: \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-intn.h \
  /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h \
- /home/ivanilov/projekt/semestralna_praca_POS/client/../common/config.h \
+ /home/timoshevskyi/semestralna_praca_POS/client/../common/config.h \
  /usr/include/stdio.h /usr/lib/gcc/x86_64-linux-gnu/12/include/stddef.h \
  /usr/lib/gcc/x86_64-linux-gnu/12/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/types/__fpos_t.h \
