@@ -67,13 +67,11 @@ int menu_get_simulation_config(SimulationConfig *config) {
     
     printf("\n========== KONFIGURÁCIA SIMULÁCIE ==========\n");
     
-    /* Počet parkovacích miest */
     config->parking_spots = menu_get_uint(
         "Zadaj pocet parkovacich miest: ",
         1, MAX_PARKING_SPOTS
     );
     
-    /* Režim parkovania */
     printf("Rezim parkovania (0 = bez cakania, 1 = s cakanim): ");
     fflush(stdout);
     uint32_t mode;
@@ -89,31 +87,26 @@ int menu_get_simulation_config(SimulationConfig *config) {
     }
     config->mode = (ParkingMode)mode;
     
-    /* Dĺžka simulácie */
     config->duration_sec = menu_get_uint(
         "Dlzka simulacie (s): ",
         MIN_SIMULATION_TIME, MAX_SIMULATION_TIME
     );
     
-    /* Minimálny interval príchodu */
     config->min_arrival_interval = menu_get_uint(
         "Minimalny interval prichodu (s): ",
         1, 3600
     );
     
-    /* Maximálny interval príchodu */
     config->max_arrival_interval = menu_get_uint(
         "Maximalny interval prichodu (s): ",
         config->min_arrival_interval, 3600
     );
     
-    /* Minimálny čas parkovania */
     config->min_parking_time = menu_get_uint(
         "Minimalny cas parkovania (s): ",
         1, 3600
     );
     
-    /* Maximálny čas parkovania */
     config->max_parking_time = menu_get_uint(
         "Maximalny cas parkovania (s): ",
         config->min_parking_time, 3600

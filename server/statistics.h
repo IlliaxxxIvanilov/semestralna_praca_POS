@@ -12,13 +12,12 @@ typedef struct {
     uint32_t current_parked;
     uint32_t current_waiting;
     
-    // Pre výpočet priemerov 
     uint64_t total_parking_time;   
     uint32_t total_parking_count;  
     uint64_t total_wait_time;      
     uint32_t total_waited;         
     
-    pthread_mutex_t *mutex;        // Mutex pre synchronizáciu 
+    pthread_mutex_t *mutex;        // Mutex pre synchronizaciu 
 } Statistics;
 
 

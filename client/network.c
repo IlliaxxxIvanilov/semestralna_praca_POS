@@ -49,13 +49,11 @@ int network_create_simulation(int sockfd, const SimulationConfig *config) {
     
     log_debug("CLIENT", "Posielam MSG_CREATE_SIM");
     
-    /* Odoslanie konfigurácie */
     if (send_simulation_config(sockfd, config) != 0) {
         log_error("CLIENT", "Nepodarilo sa odoslať konfiguráciu");
         return -1;
     }
     
-    /* Čakanie na odpoveď */
     MessageHeader header;
     if (recv_message_header(sockfd, &header) != 0) {
         log_error("CLIENT", "Nepodarilo sa prijať odpoveď");
@@ -83,14 +81,11 @@ int network_join_simulation(int sockfd) {
     
     log_debug("CLIENT", "Posielam MSG_CONNECT");
     
-    /* Odoslanie správy MSG_CONNECT */
     if (send_message_header(sockfd, MSG_CONNECT, 0) != 0) {
         log_error("CLIENT", "Nepodarilo sa odoslať MSG_CONNECT");
         return -1;
     }
     
-    /* OPRAVA: Nečakáme na MSG_CONNECT_ACK
-     * Server priamo začne spracovávať príkazy */
     log_info("CLIENT", "Pripojený k simulácii");
     return 0;
 }
@@ -100,12 +95,10 @@ int network_get_state(int sockfd, ParkingState *state) {
         return -1;
     }
     
-    /* Odoslanie žiadosti */
     if (send_message_header(sockfd, MSG_GET_STATE, 0) != 0) {
         return -1;
     }
     
-    /* Prijatie hlavičky odpovede */
     MessageHeader header;
     if (recv_message_header(sockfd, &header) != 0) {
         return -1;
@@ -127,12 +120,10 @@ int network_get_statistics(int sockfd, SimulationStats *stats) {
         return -1;
     }
     
-    /* Odoslanie žiadosti */
     if (send_message_header(sockfd, MSG_GET_STATS, 0) != 0) {
         return -1;
     }
     
-    /* Prijatie hlavičky odpovede */
     MessageHeader header;
     if (recv_message_header(sockfd, &header) != 0) {
         return -1;

@@ -4,7 +4,7 @@
 #include <stdint.h>
 #include "config.h"
 
-//enum pre napisane vsetky mozne spravy medzi klientom a serverom, hodniity ako cisla
+//enum pre napisane vsetky mozne spravy medzi klientom a serverom, hodnoty ako cisla
 typedef enum {
     MSG_CONNECT = 1,          
     MSG_CONNECT_ACK = 2,       

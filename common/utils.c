@@ -78,29 +78,24 @@ int validate_simulation_config(const void *cfg) {
         return 0;
     }
     
-    //Validácia počtu parkovacích miest
     if (config->parking_spots == 0 || config->parking_spots > MAX_PARKING_SPOTS) {
         return 0;
     }
     
-    // Validácia režimu parkovania 
     if (config->mode != PARKING_MODE_NO_WAIT && config->mode != PARKING_MODE_WITH_WAIT) {
         return 0;
     }
     
-    // Validácia trvania simulácie 
     if (config->duration_sec < MIN_SIMULATION_TIME || 
         config->duration_sec > MAX_SIMULATION_TIME) {
         return 0;
     }
     
-    // Validácia intervalov príchodu 
     if (config->min_arrival_interval == 0 || 
         config->min_arrival_interval > config->max_arrival_interval) {
         return 0;
     }
     
-    // Validácia času parkovania 
     if (config->min_parking_time == 0 || 
         config->min_parking_time > config->max_parking_time) {
         return 0;

@@ -1,7 +1,7 @@
 #ifndef CONFIG_H
 #define CONFIG_H
 
-//konstanty pr  server a spravanie sieti
+//konstanty pre server a spravanie sieti
 #define DEFAULT_PORT 8888
 #define MAX_CLIENTS 10
 #define BUFFER_SIZE 4096
