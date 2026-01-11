@@ -6,10 +6,8 @@
 #include <signal.h>
 #include <unistd.h>
 
-/* Globálna premenná pre server (pre signal handler) */
 static Server *g_server = NULL;
 
-/* Signal handler pre CTRL+C */
 static void signal_handler(int sig) {
     (void)sig;
     if (g_server) {
@@ -21,7 +19,7 @@ static void signal_handler(int sig) {
 int main(int argc, char *argv[]) {
     int port = DEFAULT_PORT;
     
-    /* Parsovanie argumentov */
+    // Moznost zadat rucne iny port
     if (argc > 1) {
         port = atoi(argv[1]);
         if (port <= 0 || port > 65535) {
@@ -30,31 +28,26 @@ int main(int argc, char *argv[]) {
             return 1;
         }
     }
-    
-    /* Inicializácia generátora náhodných čísel */
+  
     init_random(0);
     
-    /* Vytvorenie servera */
     g_server = server_create(port);
     if (!g_server) {
         log_error("SERVER", "Nepodarilo sa vytvoriť server");
         return 1;
     }
     
-    /* Nastavenie signal handlera */
+    // Nastavenie signal handlera
     signal(SIGINT, signal_handler);
     signal(SIGTERM, signal_handler);
     
-    /* Spustenie servera */
     if (server_start(g_server) != 0) {
         server_destroy(g_server);
         return 1;
     }
     
-    /* Hlavná slučka */
     server_run(g_server);
     
-    /* Úklid */
     server_destroy(g_server);
     
     log_info("SERVER", "Server ukončený");

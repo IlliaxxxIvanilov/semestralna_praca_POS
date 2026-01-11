@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/* Pomocné funkcie pre frontu */
+// Pomocné funkcie pre frontu
 static WaitingQueue* queue_create(void) {
     WaitingQueue *queue = (WaitingQueue*)malloc(sizeof(WaitingQueue));
     if (!queue) {
@@ -112,7 +112,7 @@ Parking* parking_create(uint32_t total_spots, ParkingMode mode) {
         return NULL;
     }
     
-    /* Inicializácia parkovacích miest */
+    // Inicializacia parkovacich miest
     for (uint32_t i = 0; i < total_spots; i++) {
         parking->spots[i].id = i;
         parking->spots[i].occupied = 0;
@@ -154,7 +154,6 @@ int parking_try_park(Parking *parking, Vehicle *vehicle, uint32_t current_time) 
     
     pthread_mutex_lock(parking->mutex);
     
-    /* Hľadáme voľné miesto */
     int spot_id = -1;
     for (uint32_t i = 0; i < parking->total_spots; i++) {
         if (!parking->spots[i].occupied) {
@@ -162,9 +161,7 @@ int parking_try_park(Parking *parking, Vehicle *vehicle, uint32_t current_time) 
             break;
         }
     }
-    
-    /* Našli sme voľné miesto */
-    if (spot_id >= 0) {
+        if (spot_id >= 0) {
         parking->spots[spot_id].occupied = 1;
         parking->spots[spot_id].vehicle = vehicle;
         parking->occupied_count++;
@@ -173,15 +170,13 @@ int parking_try_park(Parking *parking, Vehicle *vehicle, uint32_t current_time) 
         return 1;
     }
     
-    /* Parkovisko plné */
+    //moznost cakania 
     if (parking->mode == PARKING_MODE_WITH_WAIT) {
-        /* Pridať do fronty */
         vehicle_wait(vehicle, current_time);
         queue_enqueue(parking->queue, vehicle);
         pthread_mutex_unlock(parking->mutex);
         return 0;
     } else {
-        /* Bez čakania - vozidlo odchádza */
         vehicle_leave(vehicle);
         pthread_mutex_unlock(parking->mutex);
         return -1;
@@ -201,7 +196,6 @@ int parking_depart(Parking *parking, Vehicle *vehicle) {
         return -1;
     }
     
-    /* Uvoľnenie miesta */
     parking->spots[spot_id].occupied = 0;
     parking->spots[spot_id].vehicle = NULL;
     parking->occupied_count--;
@@ -221,9 +215,9 @@ int parking_process_queue(Parking *parking, uint32_t current_time) {
     
     pthread_mutex_lock(parking->mutex);
     
-    /* Pokúšame sa zaparkovať vozidlá z fronty */
+    // Skusanie sa zaparkovat
     while (parking->queue->size > 0 && parking->occupied_count < parking->total_spots) {
-        /* Hľadáme voľné miesto */
+        // volne miesto ?
         int spot_id = -1;
         for (uint32_t i = 0; i < parking->total_spots; i++) {
             if (!parking->spots[i].occupied) {
@@ -236,13 +230,12 @@ int parking_process_queue(Parking *parking, uint32_t current_time) {
             break;
         }
         
-        /* Vyberieme prvé vozidlo z fronty */
+        // fifo
         Vehicle *vehicle = queue_dequeue(parking->queue);
         if (!vehicle) {
             break;
         }
         
-        /* Zaparkujeme ho */
         parking->spots[spot_id].occupied = 1;
         parking->spots[spot_id].vehicle = vehicle;
         parking->occupied_count++;

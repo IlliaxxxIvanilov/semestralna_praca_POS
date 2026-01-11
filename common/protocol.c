@@ -157,7 +157,7 @@ int send_statistics(int sockfd, const SimulationStats *stats) {
     net_stats.current_parked = htonl(stats->current_parked);
     net_stats.current_waiting = htonl(stats->current_waiting);
     
-    /* Pre float použijeme memcpy (predpokladáme IEEE 754) */
+    // Pre float použijeme memcpy (predpokladáme IEEE 754)
     memcpy(&net_stats.avg_parking_time, &stats->avg_parking_time, sizeof(float));
     memcpy(&net_stats.avg_wait_time, &stats->avg_wait_time, sizeof(float));
     memcpy(&net_stats.occupancy_rate, &stats->occupancy_rate, sizeof(float));
@@ -187,7 +187,7 @@ int recv_statistics(int sockfd, SimulationStats *stats) {
     stats->current_parked = ntohl(net_stats.current_parked);
     stats->current_waiting = ntohl(net_stats.current_waiting);
     
-    /* Pre float použijeme memcpy */
+    // Pre float použijeme memcpy
     memcpy(&stats->avg_parking_time, &net_stats.avg_parking_time, sizeof(float));
     memcpy(&stats->avg_wait_time, &net_stats.avg_wait_time, sizeof(float));
     memcpy(&stats->occupancy_rate, &net_stats.occupancy_rate, sizeof(float));

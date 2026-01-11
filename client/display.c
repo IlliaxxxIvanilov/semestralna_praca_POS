@@ -1,6 +1,5 @@
 #include "display.h"
 #include <stdio.h>
-//#include <stdlib.h>
 
 void display_clear(void) {
     printf("\033[2J\033[H");

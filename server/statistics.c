@@ -98,15 +98,11 @@ void statistics_update_averages(Statistics *stats) {
     if (!stats) {
         return;
     }
-    
-    /* Priemery sa počítajú pri získavaní štatistík */
 }
 
 void statistics_calculate_occupancy(Statistics *stats, uint32_t total_spots) {
     if (!stats || total_spots == 0) {
         return;
     }
-    
-    /* Obsadenosť sa počíta pri získavaní štatistík */
     (void)total_spots;
 }

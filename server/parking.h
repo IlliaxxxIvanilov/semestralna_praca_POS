@@ -6,14 +6,14 @@
 #include "../common/config.h"
 #include "vehicle.h"
 
-// Štruktúra parkovacieho miesta
+// Struktura parkovacieho miesta
 typedef struct {
     int id;                
     int occupied;          
     Vehicle *vehicle;      
 } ParkingSpot;
 
-// Prvok fronty čakajúcich vozidiel
+// Prvok fronty cakajucich vozidiel
 typedef struct QueueNode {
     Vehicle *vehicle;
     struct QueueNode *next;

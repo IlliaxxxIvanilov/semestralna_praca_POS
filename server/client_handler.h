@@ -3,7 +3,7 @@
 
 #include "simulation.h"
 
-/* Štruktúra pre dáta vlákna klienta */
+//Struktura pre data vlakna klienta
 typedef struct {
     int client_socket;
     Simulation *simulation;

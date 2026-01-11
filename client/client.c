@@ -52,7 +52,7 @@ int client_connect(Client *client, const char *host, int port) {
     
     client->connected = 1;
     
-    /* Bezpečné kopírovanie - kontrola či nie je rovnaká adresa */
+    // Bezpecne kopirovanie -> kontrola ci nie je rovnaka adresa
     if (host != client->server_host) {
         strncpy(client->server_host, host, sizeof(client->server_host) - 1);
         client->server_host[sizeof(client->server_host) - 1] = '\0';
@@ -91,7 +91,7 @@ void client_run(Client *client) {
         
         switch (option) {
             case MENU_NEW_SIMULATION: {
-                /* Vytvorenie novej simulácie */
+                // Vytvorenie novej simulacie
                 if (client->in_simulation) {
                     display_error("Už ste v simulácii!");
                     display_pause();
@@ -105,7 +105,7 @@ void client_run(Client *client) {
                     break;
                 }
                 
-                /* Pripojenie k serveru */
+                // Pripojenie k serveru
                 if (!client->connected) {
                     if (client_connect(client, client->server_host, client->server_port) != 0) {
                         display_error("Nepodarilo sa pripojiť k serveru");
@@ -116,7 +116,7 @@ void client_run(Client *client) {
                 
                 log_debug("CLIENT", "Posielam MSG_SIM_CONFIG");
                 
-                /* Vytvorenie simulácie */
+                //Vytvorenie simulacie
                 if (network_create_simulation(client->socket, &config) == 0) {
                     display_info("Simulácia vytvorená");
                     client->in_simulation = 1;
@@ -130,14 +130,14 @@ void client_run(Client *client) {
             }
             
             case MENU_JOIN_SIMULATION: {
-                /* Pripojenie k existujúcej simulácii */
+                // Pripojenie k existujucej simulacii
                 if (client->in_simulation) {
                     display_info("Už si pripojený");
                     display_pause();
                     break;
                 }
                 
-                /* Pripojenie k serveru */
+                // Pripojenie k serveru
                 if (!client->connected) {
                     if (client_connect(client, client->server_host, client->server_port) != 0) {
                         display_error("Nepodarilo sa pripojiť k serveru");
@@ -146,7 +146,7 @@ void client_run(Client *client) {
                     }
                 }
                 
-                /* Pripojenie k simulácii */
+                // Pripojenie k simulacii
                 if (network_join_simulation(client->socket) == 0) {
                     display_info("Pripojený k simulácii");
                     client->in_simulation = 1;
@@ -160,7 +160,7 @@ void client_run(Client *client) {
             }
             
             case MENU_SHOW_STATE: {
-                /* Zobrazenie stavu parkoviska */
+                // Zobrazenie stavu parkoviska
                 if (!client->in_simulation) {
                     display_error("Nie ste v žiadnej simulácii!");
                     display_pause();
@@ -179,7 +179,7 @@ void client_run(Client *client) {
             }
             
             case MENU_SHOW_STATS: {
-                /* Zobrazenie štatistík */
+                // statistiky
                 if (!client->in_simulation) {
                     display_error("Nie ste v žiadnej simulácii!");
                     display_pause();
@@ -198,7 +198,7 @@ void client_run(Client *client) {
             }
             
             case MENU_STOP_SIMULATION: {
-                /* Ukončenie simulácie */
+                // koniec simulacie
                 if (!client->in_simulation) {
                     display_error("Nie ste v žiadnej simulácii!");
                     display_pause();
@@ -212,7 +212,7 @@ void client_run(Client *client) {
             }
             
             case MENU_EXIT: {
-                /* Ukončenie aplikácie */
+                // ukoncit
                 if (client->connected) {
                     client_disconnect(client);
                 }

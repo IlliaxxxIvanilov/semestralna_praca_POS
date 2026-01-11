@@ -33,16 +33,13 @@ void* client_handler_thread(void *arg) {
     Simulation *sim = data->simulation;
     
     log_debug("SERVER", "Klient pripojený, socket=%d", client_socket);
-    
-    /* OPRAVA: Neposielame MSG_CONNECT_ACK automaticky
-     * Odpoveď už bola poslaná v server_run() */
-    
+        
     int connected = 1;
     
     while (connected) {
         MessageHeader header;
         
-        /* Prijatie hlavičky správy */
+        // Prijatie hlavicky spravy
         if (recv_message_header(client_socket, &header) != 0) {
             log_debug("SERVER", "Klient sa odpojil");
             break;
@@ -50,7 +47,7 @@ void* client_handler_thread(void *arg) {
         
         switch (header.type) {
             case MSG_GET_STATE: {
-                /* Žiadosť o stav parkoviska */
+                //Ziadost o stave parkoviska 
                 ParkingState state;
                 if (simulation_get_state(sim, &state) == 0) {
                     send_parking_state(client_socket, &state);
@@ -61,7 +58,7 @@ void* client_handler_thread(void *arg) {
             }
             
             case MSG_GET_STATS: {
-                /* Žiadosť o štatistiky */
+                // Ziadost o statistiky
                 SimulationStats stats;
                 if (simulation_get_statistics(sim, &stats) == 0) {
                     send_statistics(client_socket, &stats);
@@ -72,7 +69,7 @@ void* client_handler_thread(void *arg) {
             }
             
             case MSG_DISCONNECT: {
-                /* Klient sa chce odpojiť */
+                //Klient sa chce odpojit
                 log_debug("SERVER", "Klient žiada odpojenie");
                 connected = 0;
                 break;

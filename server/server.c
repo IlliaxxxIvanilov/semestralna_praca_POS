@@ -9,7 +9,6 @@
 #include <netinet/in.h>
 #include <arpa/inet.h>
 #include <pthread.h>
-//#include <signal.h>
 
 Server* server_create(int port) {
     Server *server = (Server*)malloc(sizeof(Server));
@@ -43,7 +42,7 @@ void server_destroy(Server *server) {
         return;
     }
     
-    /* Čakanie na ukončenie všetkých vlákien */
+    // Cakanie na ukoncenie vsetkych vlakien
     if (server->threads_mutex) {
         pthread_mutex_lock(server->threads_mutex);
         ThreadNode *current = server->threads;
@@ -75,14 +74,14 @@ int server_start(Server *server) {
         return -1;
     }
     
-    /* Vytvorenie soketu */
+    // Vytvorenie soketu
     server->server_socket = socket(AF_INET, SOCK_STREAM, 0);
     if (server->server_socket < 0) {
         log_error("SERVER", "Nepodarilo sa vytvoriť socket");
         return -1;
     }
     
-    /* Nastavenie možnosti znovu použiť adresu */
+    // Nastavenie moznosti znovu pouzit adresu
     int opt = 1;
     if (setsockopt(server->server_socket, SOL_SOCKET, SO_REUSEADDR, 
                    &opt, sizeof(opt)) < 0) {
@@ -91,14 +90,13 @@ int server_start(Server *server) {
         return -1;
     }
     
-    /* Nastavenie adresy */
+    // Nastavenie adresy
     struct sockaddr_in address;
     memset(&address, 0, sizeof(address));
     address.sin_family = AF_INET;
     address.sin_addr.s_addr = INADDR_ANY;
     address.sin_port = htons(server->port);
     
-    /* Bind */
     if (bind(server->server_socket, (struct sockaddr*)&address, 
              sizeof(address)) < 0) {
         log_error("SERVER", "Nepodarilo sa pripojiť na port %d", server->port);
@@ -106,7 +104,6 @@ int server_start(Server *server) {
         return -1;
     }
     
-    /* Listen */
     if (listen(server->server_socket, MAX_CLIENTS) < 0) {
         log_error("SERVER", "Nepodarilo sa začať počúvať");
         close(server->server_socket);
@@ -143,20 +140,20 @@ int server_create_simulation(Server *server, const SimulationConfig *config) {
         return -1;
     }
     
-    /* Ak už simulácia existuje, zničíme ju */
+    // Ak uz simulacia existuje, znicime ju
     if (server->simulation) {
         simulation_destroy(server->simulation);
         server->simulation = NULL;
     }
     
-    /* Vytvorenie novej simulácie */
+    // Vytvorenie novej simulacie
     server->simulation = simulation_create(config);
     if (!server->simulation) {
         log_error("SERVER", "Nepodarilo sa vytvoriť simuláciu");
         return -1;
     }
     
-    /* Spustenie simulácie */
+    // Spustenie simulacie
     if (simulation_start(server->simulation) != 0) {
         log_error("SERVER", "Nepodarilo sa spustiť simuláciu");
         simulation_destroy(server->simulation);
@@ -194,7 +191,6 @@ void server_run(Server *server) {
                  inet_ntoa(client_addr.sin_addr), 
                  ntohs(client_addr.sin_port));
         
-        /* Prijatie prvej správy (MSG_CONNECT alebo MSG_CREATE_SIM) */
         MessageHeader header;
         if (recv_message_header(client_socket, &header) != 0) {
             log_error("SERVER", "Nepodarilo sa prijať hlavičku");
@@ -203,7 +199,7 @@ void server_run(Server *server) {
         }
         
         if (header.type == MSG_CREATE_SIM) {
-            /* Vytvorenie novej simulácie */
+            // Vytvorenie novej simulacie
             SimulationConfig config;
             if (recv_simulation_config(client_socket, &config) == 0) {
                 if (server_create_simulation(server, &config) == 0) {
@@ -222,14 +218,14 @@ void server_run(Server *server) {
                 continue;
             }
         } else if (header.type == MSG_CONNECT) {
-            /* Pripojenie k existujúcej simulácii */
+            // Pripojenie k existujucej simulacii
             if (!server->simulation) {
                 send_error(client_socket, ERR_SIM_NOT_FOUND, 
                           "Simulácia neexistuje");
                 close(client_socket);
                 continue;
             }
-            /* Potvrdenie pripojenia sa odošle v client_handler_thread */
+            // Potvrdenie pripojenia -> client_handler_thread
         } else {
             log_error("SERVER", "Neočakávaný typ správy: %d", header.type);
             send_error(client_socket, ERR_INTERNAL, "Neočakávaný typ správy");
@@ -237,7 +233,7 @@ void server_run(Server *server) {
             continue;
         }
         
-        /* Vytvorenie vlákna pre klienta */
+        //Vytvorenie vlakna pre klienta
         ClientThreadData *thread_data = client_thread_data_create(
             client_socket, server->simulation);
         
@@ -256,7 +252,7 @@ void server_run(Server *server) {
             continue;
         }
         
-        /* Pridanie vlákna do zoznamu */
+        // Pridanie vlakna do zoznamu
         pthread_mutex_lock(server->threads_mutex);
         ThreadNode *node = (ThreadNode*)malloc(sizeof(ThreadNode));
         if (node) {
